@@ -129,6 +129,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		61278FA624F9256200CB17B4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				61278F9224F9224D00CB17B4 /* URLSessionProtocol.swift */,
+				61278F8C24F9221B00CB17B4 /* ProviderProtocol.swift */,
+				61278F9824F9227F00CB17B4 /* ServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		61278FA724F9258300CB17B4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61278FA424F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift */,
+				61278F9424F9226400CB17B4 /* URLSession+URLSessionProtocol.swift */,
+				61278F9024F9224100CB17B4 /* URLRequest+ServiceProtocol.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		61278FA824F925A900CB17B4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				61278F9A24F9228800CB17B4 /* HTTPMethod.swift */,
+				61278F9C24F9228E00CB17B4 /* NetworkError.swift */,
+				61278F9E24F9229400CB17B4 /* NetworkResponse.swift */,
+				61278FA024F9229C00CB17B4 /* ParametersEncoding.swift */,
+				61278FA224F922A700CB17B4 /* Task.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		61CC43BC24F88FA600F28C52 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,19 +172,11 @@
 		61CC43BD24F88FAE00F28C52 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				61278F8C24F9221B00CB17B4 /* ProviderProtocol.swift */,
-				61278FA424F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift */,
 				61278F8E24F9222500CB17B4 /* URLSessionProvider.swift */,
-				61278F9024F9224100CB17B4 /* URLRequest+ServiceProtocol.swift */,
-				61278F9224F9224D00CB17B4 /* URLSessionProtocol.swift */,
-				61278F9424F9226400CB17B4 /* URLSession+URLSessionProtocol.swift */,
+				61278FA824F925A900CB17B4 /* Enums */,
+				61278FA624F9256200CB17B4 /* Protocols */,
+				61278FA724F9258300CB17B4 /* Extensions */,
 				61278F9624F9227700CB17B4 /* NetworkTypealias.swift */,
-				61278F9824F9227F00CB17B4 /* ServiceProtocol.swift */,
-				61278F9A24F9228800CB17B4 /* HTTPMethod.swift */,
-				61278F9C24F9228E00CB17B4 /* NetworkError.swift */,
-				61278F9E24F9229400CB17B4 /* NetworkResponse.swift */,
-				61278FA024F9229C00CB17B4 /* ParametersEncoding.swift */,
-				61278FA224F922A700CB17B4 /* Task.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
