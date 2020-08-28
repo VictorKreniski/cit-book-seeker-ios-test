@@ -21,6 +21,7 @@
 		61278FA124F9229C00CB17B4 /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FA024F9229C00CB17B4 /* ParametersEncoding.swift */; };
 		61278FA324F922A700CB17B4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FA224F922A700CB17B4 /* Task.swift */; };
 		61278FA524F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FA424F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift */; };
+		61278FAA24F9261800CB17B4 /* ITunesBookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FA924F9261800CB17B4 /* ITunesBookService.swift */; };
 		612B4FC524F91EC9001A1BB2 /* iTunesSearchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 612B4FC424F91EC9001A1BB2 /* iTunesSearchData.json */; };
 		63443AB62E960C33BA4A8F66 /* Pods_BookSeekerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA2DAD11C78FA39E80D43DB /* Pods_BookSeekerTests.framework */; };
 		A72065E11B3B549056D4BF17 /* Pods_BookSeekerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C83767C280A3492B2F1CFFA /* Pods_BookSeekerUITests.framework */; };
@@ -67,6 +68,7 @@
 		61278FA024F9229C00CB17B4 /* ParametersEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
 		61278FA224F922A700CB17B4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		61278FA424F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+ServiceProtocol.swift"; sourceTree = "<group>"; };
+		61278FA924F9261800CB17B4 /* ITunesBookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesBookService.swift; sourceTree = "<group>"; };
 		612B4FC424F91EC9001A1BB2 /* iTunesSearchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iTunesSearchData.json; sourceTree = "<group>"; };
 		6C83767C280A3492B2F1CFFA /* Pods_BookSeekerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSeekerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F6E9DB6CDEF020FC343B2C /* Pods-BookSeekerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeekerUITests.debug.xcconfig"; path = "Target Support Files/Pods-BookSeekerUITests/Pods-BookSeekerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				61CC43BD24F88FAE00F28C52 /* Network */,
+				61278FA924F9261800CB17B4 /* ITunesBookService.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				61278F9124F9224100CB17B4 /* URLRequest+ServiceProtocol.swift in Sources */,
 				61278FA124F9229C00CB17B4 /* ParametersEncoding.swift in Sources */,
 				61278F9924F9227F00CB17B4 /* ServiceProtocol.swift in Sources */,
+				61278FAA24F9261800CB17B4 /* ITunesBookService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
