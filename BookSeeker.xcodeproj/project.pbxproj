@@ -137,6 +137,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		61125BB824F94EA800B0438E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				61278FA924F9261800CB17B4 /* ITunesBookService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		61278FA624F9256200CB17B4 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,9 +198,9 @@
 		61CC43BC24F88FA600F28C52 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				61125BB824F94EA800B0438E /* Services */,
 				61278FAB24F931D400CB17B4 /* Models */,
 				61CC43BD24F88FAE00F28C52 /* Network */,
-				61278FA924F9261800CB17B4 /* ITunesBookService.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
