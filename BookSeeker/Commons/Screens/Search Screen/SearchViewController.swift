@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SearchViewControllerDelegate: class {
+    func search(_ term: String)
+}
+
 final class SearchViewController: UIViewController, Drawable {
     let searchTermTableViewController: SearchTermTableViewController
 //    let listBooksTableViewController:
@@ -63,6 +67,7 @@ final class SearchViewController: UIViewController, Drawable {
                                                     constant: -15).isActive = true
     }
     func setupAdditionalConfigurations() {
+        self.searchTermTableViewController.searchViewControllerDelegate = self
         setupSearchBar()
     }
 }
@@ -73,6 +78,14 @@ extension SearchViewController: UISearchBarDelegate {
         currentSearchText = searchText
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchCoordinatorDelegate?.pressedToSearch(currentSearchText)
+    }
+}
+
+extension SearchViewController: SearchViewControllerDelegate {
+    func search(_ term: String) {
+        currentSearchText = term
+        searchBar.text = term
         searchCoordinatorDelegate?.pressedToSearch(currentSearchText)
     }
 }

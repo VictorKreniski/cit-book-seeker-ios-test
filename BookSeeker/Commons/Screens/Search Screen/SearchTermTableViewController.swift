@@ -10,6 +10,7 @@ import UIKit
 
 final class SearchTermTableViewController: UITableViewController {
     let searchViewModel: SearchViewModel
+    weak var searchViewControllerDelegate: SearchViewControllerDelegate?
     init(searchViewModel: SearchViewModel) {
         self.searchViewModel = searchViewModel
         super.init(style: .plain)
@@ -46,5 +47,8 @@ final class SearchTermTableViewController: UITableViewController {
         if let header = view as? UITableViewHeaderFooterView {
             header.textLabel?.font = UIFont.systemFont(ofSize: 12.0)
         }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchViewControllerDelegate?.search(searchViewModel.termsUsed[indexPath.row])
     }
 }
