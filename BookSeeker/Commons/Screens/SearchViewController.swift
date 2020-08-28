@@ -22,9 +22,9 @@ class SearchViewController: UIViewController, Drawable, UISearchBarDelegate {
     override func loadView() {
         super.loadView()
         let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = Constants.Design.mainColor
         self.view = view
         setupSearchTableView()
+        hideKeyboardWhenTappedAround()
         draw()
     }
     func setupSearchBar() {
@@ -41,6 +41,7 @@ class SearchViewController: UIViewController, Drawable, UISearchBarDelegate {
         self.view.addSubview(searchTermsTableView)
     }
     func stylizeView() {
+        view.backgroundColor = Constants.Design.mainColor
         searchBar.backgroundColor = .white
         searchBar.searchTextField.backgroundColor = .white
         searchBar.roundCorners(corners: [.allCorners], radius: 8)

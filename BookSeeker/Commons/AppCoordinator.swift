@@ -14,6 +14,7 @@ class AppCoordinator: Coordinator {
     let searchViewModel = SearchViewModel()
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.hideKeyboardWhenTappedAround()
     }
     func start() {
         let searchViewController = SearchViewController(searchViewModel: searchViewModel)
