@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchViewController.swift
 //  BookSeeker
 //
 //  Created by Teobaldo Mauro de Moura on 26/09/19.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
     private let sessionProvider = URLSessionProvider()
     private let screen = ViewControllerScreen()
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = .red
+        view.backgroundColor = Constants.Design.mainColor
         view.addSubview(screen)
         self.view = view
     }
@@ -38,7 +38,6 @@ class ViewController: UIViewController {
 class ViewControllerScreen: UIView, Drawable {
     var button: UIButton = {
         let view = UIButton(frame: .zero)
-        view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

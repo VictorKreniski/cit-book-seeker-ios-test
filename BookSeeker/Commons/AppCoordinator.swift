@@ -15,8 +15,12 @@ class AppCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     func start() {
-        let searchViewController = ViewController()
+        let searchViewController = SearchViewController()
+        searchViewController.title = "Search"
         print(navigationController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController.pushViewController(searchViewController, animated: false)
     }
 }
