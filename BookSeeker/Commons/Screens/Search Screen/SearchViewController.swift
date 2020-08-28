@@ -8,12 +8,16 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, Drawable, UISearchBarDelegate {
-    let searchTermsTableView = UITableView(frame: .zero, style: .grouped)
+final class SearchViewController: UIViewController, Drawable {
+    let searchTermTableViewController: SearchTermTableViewController
+//    let listBooksTableViewController:
     let searchViewModel: SearchViewModel
     let searchBar: UISearchBar = UISearchBar()
+    weak var searchCoordinatorDelegate: SearchCoordinatorDelegate?
+    var currentSearchText: String = ""
     init(searchViewModel: SearchViewModel) {
         self.searchViewModel = searchViewModel
+        self.searchTermTableViewController = SearchTermTableViewController(searchViewModel: searchViewModel)
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -23,22 +27,15 @@ class SearchViewController: UIViewController, Drawable, UISearchBarDelegate {
         super.loadView()
         let view = UIView(frame: UIScreen.main.bounds)
         self.view = view
-        setupSearchTableView()
-        hideKeyboardWhenTappedAround()
         draw()
     }
     func setupSearchBar() {
         searchBar.placeholder = "Search"
         searchBar.delegate = self
     }
-    func setupSearchTableView() {
-        searchTermsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "searchTermCell")
-        searchTermsTableView.isScrollEnabled = false
-        searchTermsTableView.dataSource = self
-    }
     func buildViewHierarchy() {
         self.view.addSubview(searchBar)
-        self.view.addSubview(searchTermsTableView)
+        self.view.addSubview(searchTermTableViewController.view)
     }
     func stylizeView() {
         view.backgroundColor = Constants.Design.mainColor
@@ -47,10 +44,6 @@ class SearchViewController: UIViewController, Drawable, UISearchBarDelegate {
         searchBar.roundCorners(corners: [.allCorners], radius: 8)
         searchBar.layer.shadowRadius = 8
         navigationController?.navigationItem.largeTitleDisplayMode = .always
-        searchTermsTableView.separatorStyle = .none
-        searchTermsTableView.backgroundColor = .white
-        searchTermsTableView.layer.shadowRadius = 8
-        searchTermsTableView.roundCorners(corners: [.topLeft, .topRight], radius: 8)
     }
     func makeConstraints() {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -60,26 +53,26 @@ class SearchViewController: UIViewController, Drawable, UISearchBarDelegate {
                                            constant: 15).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
                                             constant: -15).isActive = true
-        searchTermsTableView.translatesAutoresizingMaskIntoConstraints = false
-        searchTermsTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor,
+        searchTermTableViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        searchTermTableViewController.view.topAnchor.constraint(equalTo: searchBar.bottomAnchor,
                                                   constant: 5 ).isActive = true
-        searchTermsTableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor,
+        searchTermTableViewController.view.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor,
                                                    constant: 15).isActive = true
-        searchTermsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        searchTermsTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,
+        searchTermTableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        searchTermTableViewController.view.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor,
                                                     constant: -15).isActive = true
-
+    }
+    func setupAdditionalConfigurations() {
+        setupSearchBar()
     }
 }
 
-extension SearchViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchViewModel.termsUsed.count
+extension SearchViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        currentSearchText = searchText
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchTermCell", for: indexPath)
-        cell.textLabel?.text = searchViewModel.termsUsed[indexPath.row]
-        cell.textLabel?.tintColor = .black
-        return cell
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchCoordinatorDelegate?.pressedToSearch(currentSearchText)
     }
 }
