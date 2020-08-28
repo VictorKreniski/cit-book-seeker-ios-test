@@ -11,11 +11,12 @@ import UIKit
 class AppCoordinator: Coordinator {
     var childCoordinator: [Coordinator] = []
     var navigationController: UINavigationController
+    let searchViewModel = SearchViewModel()
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     func start() {
-        let searchViewController = SearchViewController()
+        let searchViewController = SearchViewController(searchViewModel: searchViewModel)
         searchViewController.title = "Search"
         print(navigationController)
         navigationController.navigationBar.prefersLargeTitles = true
