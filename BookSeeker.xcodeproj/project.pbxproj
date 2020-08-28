@@ -22,6 +22,9 @@
 		61278FA324F922A700CB17B4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FA224F922A700CB17B4 /* Task.swift */; };
 		61278FA524F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FA424F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift */; };
 		61278FAA24F9261800CB17B4 /* ITunesBookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FA924F9261800CB17B4 /* ITunesBookService.swift */; };
+		61278FAD24F931F200CB17B4 /* ITunesBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FAC24F931F200CB17B4 /* ITunesBookResponse.swift */; };
+		61278FAF24F9320100CB17B4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FAE24F9320100CB17B4 /* Book.swift */; };
+		61278FB124F9324700CB17B4 /* Book+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FB024F9324700CB17B4 /* Book+Codable.swift */; };
 		612B4FC524F91EC9001A1BB2 /* iTunesSearchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 612B4FC424F91EC9001A1BB2 /* iTunesSearchData.json */; };
 		63443AB62E960C33BA4A8F66 /* Pods_BookSeekerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA2DAD11C78FA39E80D43DB /* Pods_BookSeekerTests.framework */; };
 		A72065E11B3B549056D4BF17 /* Pods_BookSeekerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C83767C280A3492B2F1CFFA /* Pods_BookSeekerUITests.framework */; };
@@ -69,6 +72,9 @@
 		61278FA224F922A700CB17B4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		61278FA424F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+ServiceProtocol.swift"; sourceTree = "<group>"; };
 		61278FA924F9261800CB17B4 /* ITunesBookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesBookService.swift; sourceTree = "<group>"; };
+		61278FAC24F931F200CB17B4 /* ITunesBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesBookResponse.swift; sourceTree = "<group>"; };
+		61278FAE24F9320100CB17B4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		61278FB024F9324700CB17B4 /* Book+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Codable.swift"; sourceTree = "<group>"; };
 		612B4FC424F91EC9001A1BB2 /* iTunesSearchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iTunesSearchData.json; sourceTree = "<group>"; };
 		6C83767C280A3492B2F1CFFA /* Pods_BookSeekerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSeekerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F6E9DB6CDEF020FC343B2C /* Pods-BookSeekerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSeekerUITests.debug.xcconfig"; path = "Target Support Files/Pods-BookSeekerUITests/Pods-BookSeekerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,9 +169,28 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		61278FAB24F931D400CB17B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				61278FAC24F931F200CB17B4 /* ITunesBookResponse.swift */,
+				61278FB224F9324F00CB17B4 /* Book */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		61278FB224F9324F00CB17B4 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				61278FAE24F9320100CB17B4 /* Book.swift */,
+				61278FB024F9324700CB17B4 /* Book+Codable.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
 		61CC43BC24F88FA600F28C52 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				61278FAB24F931D400CB17B4 /* Models */,
 				61CC43BD24F88FAE00F28C52 /* Network */,
 				61278FA924F9261800CB17B4 /* ITunesBookService.swift */,
 			);
@@ -485,8 +510,11 @@
 				61278F9324F9224D00CB17B4 /* URLSessionProtocol.swift in Sources */,
 				B1B751E6233D28D6002C83F2 /* SceneDelegate.swift in Sources */,
 				61278FA324F922A700CB17B4 /* Task.swift in Sources */,
+				61278FAD24F931F200CB17B4 /* ITunesBookResponse.swift in Sources */,
 				61278F9B24F9228800CB17B4 /* HTTPMethod.swift in Sources */,
+				61278FAF24F9320100CB17B4 /* Book.swift in Sources */,
 				61278F9F24F9229400CB17B4 /* NetworkResponse.swift in Sources */,
+				61278FB124F9324700CB17B4 /* Book+Codable.swift in Sources */,
 				61278F9524F9226400CB17B4 /* URLSession+URLSessionProtocol.swift in Sources */,
 				61278F9D24F9228E00CB17B4 /* NetworkError.swift in Sources */,
 				61278F9124F9224100CB17B4 /* URLRequest+ServiceProtocol.swift in Sources */,
