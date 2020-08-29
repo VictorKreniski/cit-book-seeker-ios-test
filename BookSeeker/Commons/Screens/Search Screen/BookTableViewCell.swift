@@ -58,7 +58,6 @@ final class BookTableViewCell: UITableViewCell, Drawable {
             arrangedSubviews: [coverImageView, verticalStackView])
         stackview.translatesAutoresizingMaskIntoConstraints = false
         stackview.axis = .horizontal
-//        stackview.alignment = .lastBaseline
         stackview.spacing = 10
         return stackview
     }()
@@ -67,6 +66,8 @@ final class BookTableViewCell: UITableViewCell, Drawable {
         containerView.addSubview(mainHorizontalStackView)
     }
     func stylizeView() {
+        containerView.backgroundColor = Constants.Design.secondaryPink
+        containerView.roundCorners(corners: .allCorners, radius: 8)
         authorLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
         authorLabel.tintColor = .lightGray
         titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
@@ -82,6 +83,7 @@ final class BookTableViewCell: UITableViewCell, Drawable {
         coverImageView.contentMode = .scaleAspectFit
     }
     func makeConstraints() {
+        containerView.backgroundColor = Constants.Design.secondaryPink
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         starImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,13 +92,15 @@ final class BookTableViewCell: UITableViewCell, Drawable {
         coverImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-        containerView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+        containerView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
         containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
-        mainHorizontalStackView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
-        mainHorizontalStackView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        mainHorizontalStackView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
-        mainHorizontalStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
+        mainHorizontalStackView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10).isActive = true
+        mainHorizontalStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        mainHorizontalStackView.rightAnchor.constraint(equalTo: containerView.rightAnchor,
+                                                       constant: -10).isActive = true
+        mainHorizontalStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor,
+                                                        constant: -10).isActive = true
         coverImageView.heightAnchor.constraint(equalTo: coverImageView.widthAnchor,
                                                multiplier: 1.0/0.8).isActive = true
     }
@@ -113,6 +117,6 @@ extension BookTableViewCell {
         if let recomendation = book.ratingCount {
             recomendationsLabel.text = "(\(recomendation))"
         }
-        priceLabel.text = "\(book.price)"
+        priceLabel.text = book.price > 0 ? "$\(book.price) " + book.currency : "Free"
     }
 }
