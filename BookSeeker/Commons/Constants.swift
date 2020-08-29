@@ -10,6 +10,7 @@ import UIKit
 
 struct Constants {
     struct Design {
-        static let mainColor = UIColor(hexaString: "#FF968A")
+        static let primaryPink = UIColor(hexaString: "#FF968A")
+        static let secondaryPink = UIColor(hexaString: "#FFC5BF")
     }
 }

@@ -49,7 +49,7 @@ final class SearchViewController: UIViewController, Drawable {
         self.view.addSubview(listBooksTableViewController.view)
     }
     func stylizeView() {
-        view.backgroundColor = Constants.Design.mainColor
+        view.backgroundColor = Constants.Design.primaryPink
         searchBar.backgroundColor = .white
         searchBar.searchTextField.backgroundColor = .white
         searchBar.roundCorners(corners: [.allCorners], radius: 8)

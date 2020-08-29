@@ -18,7 +18,7 @@ final class ListBooksTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     override func viewDidLoad() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "bookCell")
+        tableView.register(BookTableViewCell.self, forCellReuseIdentifier: "bookCell")
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
@@ -35,10 +35,15 @@ final class ListBooksTableViewController: UITableViewController {
         return bookViewModel.books.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath)
-        cell.textLabel?.text = bookViewModel.books[indexPath.row].name
-        cell.textLabel?.tintColor = .black
-        return cell
+        let genericCell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath)
+        if let bookCell = genericCell as? BookTableViewCell {
+            bookCell.updateWith(bookViewModel.books[indexPath.row])
+            bookCell.draw()
+        }
+        return genericCell
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
