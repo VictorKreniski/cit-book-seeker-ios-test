@@ -58,6 +58,7 @@ final class BookTableViewCell: UITableViewCell, Drawable {
             arrangedSubviews: [coverImageView, verticalStackView])
         stackview.translatesAutoresizingMaskIntoConstraints = false
         stackview.axis = .horizontal
+//        stackview.alignment = .lastBaseline
         stackview.spacing = 10
         return stackview
     }()
@@ -97,7 +98,7 @@ final class BookTableViewCell: UITableViewCell, Drawable {
         mainHorizontalStackView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
         mainHorizontalStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
         coverImageView.heightAnchor.constraint(equalTo: coverImageView.widthAnchor,
-                                               multiplier: 1.0/0.65).isActive = true
+                                               multiplier: 1.0/0.8).isActive = true
     }
 }
 
