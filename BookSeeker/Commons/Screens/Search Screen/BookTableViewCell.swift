@@ -16,6 +16,7 @@ final class BookTableViewCell: UITableViewCell, Drawable {
     let starsEvaluationLabel = UILabel()
     let recomendationsLabel = UILabel()
     let priceLabel = UILabel()
+    let containerView = UIView()
     lazy var recomendationStackView: UIStackView = {
         let stackview = UIStackView(
             arrangedSubviews: [starImageView, starsEvaluationLabel, recomendationsLabel])
@@ -58,15 +59,13 @@ final class BookTableViewCell: UITableViewCell, Drawable {
         stackview.translatesAutoresizingMaskIntoConstraints = false
         stackview.axis = .horizontal
         stackview.spacing = 10
-        stackview.distribution = .fill
         return stackview
     }()
     func buildViewHierarchy() {
-        addSubview(mainHorizontalStackView)
+        addSubview(containerView)
+        containerView.addSubview(mainHorizontalStackView)
     }
     func stylizeView() {
-        contentView.roundCorners(corners: .allCorners, radius: 8)
-        contentView.clipsToBounds = true
         authorLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
         authorLabel.tintColor = .lightGray
         titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
@@ -79,31 +78,27 @@ final class BookTableViewCell: UITableViewCell, Drawable {
         recomendationsLabel.tintColor = .lightGray
         priceLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         priceLabel.tintColor = .white
+        coverImageView.contentMode = .scaleAspectFit
     }
     func makeConstraints() {
-        mainHorizontalStackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        mainHorizontalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        mainHorizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        mainHorizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        coverImageView.translatesAutoresizingMaskIntoConstraints = false
-        coverImageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor,
-                                                constant: 15).isActive = true
-        coverImageView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor,
-                                               constant: -20).isActive = true
-        coverImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor,
-                                            constant: 20).isActive = true
-        coverImageView.heightAnchor.constraint(equalTo: coverImageView.widthAnchor,
-                                               multiplier: 1.0/0.65).isActive = true
-        priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
-        authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         starImageView.translatesAutoresizingMaskIntoConstraints = false
         recomendationsLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        coverImageView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        containerView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        mainHorizontalStackView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
+        mainHorizontalStackView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        mainHorizontalStackView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        mainHorizontalStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        coverImageView.heightAnchor.constraint(equalTo: coverImageView.widthAnchor,
+                                               multiplier: 1.0/0.65).isActive = true
     }
-
 }
 
 extension BookTableViewCell {
