@@ -15,11 +15,13 @@ protocol SearchCoordinatorDelegate: class {
 final class SearchCoordinator: Coordinator {
     var navigationController: UINavigationController
     let searchViewModel: SearchViewModel
+    let bookViewModel: BookViewModel
     let searchViewController: SearchViewController
-    init(navigationController: UINavigationController, searchViewModel: SearchViewModel) {
+    init(navigationController: UINavigationController, searchViewModel: SearchViewModel, bookViewModel: BookViewModel) {
         self.navigationController = navigationController
         self.searchViewModel = searchViewModel
-        self.searchViewController = SearchViewController(searchViewModel: searchViewModel)
+        self.bookViewModel = bookViewModel
+        self.searchViewController = SearchViewController(searchViewModel: searchViewModel, bookViewModel: bookViewModel)
         searchViewController.searchCoordinatorDelegate = self
     }
     func start() {
@@ -35,5 +37,6 @@ extension SearchCoordinator: SearchCoordinatorDelegate {
     func pressedToSearch(_ term: String) {
         searchViewModel.searched(term)
         searchViewController.searchTermTableViewController.tableView.reloadData()
+        bookViewModel.updateBooksBy(term: term)
     }
 }

@@ -11,12 +11,13 @@ import UIKit
 final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     let searchViewModel = SearchViewModel()
+    let bookViewModel = BookViewModel()
     let searchCoordinator: SearchCoordinator
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.hideKeyboardWhenTappedAround()
         self.searchCoordinator = SearchCoordinator(
-            navigationController: navigationController, searchViewModel: searchViewModel)
+            navigationController: navigationController, searchViewModel: searchViewModel, bookViewModel: bookViewModel)
     }
     func start() {
         searchCoordinator.start()

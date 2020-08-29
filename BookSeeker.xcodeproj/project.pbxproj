@@ -32,6 +32,7 @@
 		6183C0BA24F96DD900AA1601 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6183C0B924F96DD900AA1601 /* Constants.swift */; };
 		6183C0BE24F96FE500AA1601 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6183C0BD24F96FE500AA1601 /* UIColor+HexString.swift */; };
 		61C407E524F9BDC3001A6AAC /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407E424F9BDC3001A6AAC /* SearchCoordinator.swift */; };
+		61C407E824F9CF81001A6AAC /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407E724F9CF81001A6AAC /* BookViewModel.swift */; };
 		61E9DA8B24F97C5D0031604E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA8A24F97C5D0031604E /* SearchViewModel.swift */; };
 		61E9DA8D24F97EF40031604E /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA8C24F97EF40031604E /* UIView+RoundedCorners.swift */; };
 		61E9DA9124F9B0210031604E /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA9024F9B0210031604E /* UIViewController+HideKeyboard.swift */; };
@@ -92,6 +93,7 @@
 		6183C0B924F96DD900AA1601 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6183C0BD24F96FE500AA1601 /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		61C407E424F9BDC3001A6AAC /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		61C407E724F9CF81001A6AAC /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		61E9DA8A24F97C5D0031604E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		61E9DA8C24F97EF40031604E /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
 		61E9DA9024F9B0210031604E /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
@@ -256,11 +258,12 @@
 		61E9DA9424F9B8CE0031604E /* Search Screen */ = {
 			isa = PBXGroup;
 			children = (
-				B1B751E7233D28D6002C83F2 /* SearchViewController.swift */,
+				61C407E424F9BDC3001A6AAC /* SearchCoordinator.swift */,
 				61E9DA8A24F97C5D0031604E /* SearchViewModel.swift */,
+				61C407E724F9CF81001A6AAC /* BookViewModel.swift */,
+				B1B751E7233D28D6002C83F2 /* SearchViewController.swift */,
 				61E9DA9224F9B8AF0031604E /* SearchTermTableViewController.swift */,
 				61E9DA9524F9B8FD0031604E /* ListBooksTableViewController.swift */,
-				61C407E424F9BDC3001A6AAC /* SearchCoordinator.swift */,
 			);
 			path = "Search Screen";
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				61278F8D24F9221B00CB17B4 /* ProviderProtocol.swift in Sources */,
 				6183C0BE24F96FE500AA1601 /* UIColor+HexString.swift in Sources */,
 				61278FA524F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift in Sources */,
+				61C407E824F9CF81001A6AAC /* BookViewModel.swift in Sources */,
 				B1B751E4233D28D6002C83F2 /* AppDelegate.swift in Sources */,
 				61278F9724F9227700CB17B4 /* NetworkTypealias.swift in Sources */,
 				61278F8F24F9222500CB17B4 /* URLSessionProvider.swift in Sources */,
