@@ -16,7 +16,7 @@ struct Book {
     let author: String
     let price: Double
     let currency: String
-    let releaseDate: String?
     let rating: Double?
     let ratingCount: Int?
+    let genres: [String]
 }

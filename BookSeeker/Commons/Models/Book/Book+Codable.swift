@@ -17,9 +17,9 @@ extension Book: Codable {
         case author = "artistName"
         case price
         case currency
-        case releaseDate = "releaseDate"
         case rating = "averageUserRating"
         case ratingCount = "userRatingCount"
+        case genres
     }
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -30,9 +30,9 @@ extension Book: Codable {
         try container.encode(author, forKey: .author)
         try container.encode(price, forKey: .price)
         try container.encode(currency, forKey: .currency)
-        try container.encode(releaseDate, forKey: .releaseDate)
         try container.encode(rating, forKey: .rating)
         try container.encode(ratingCount, forKey: .ratingCount)
+        try container.encode(genres, forKey: .genres)
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -42,9 +42,9 @@ extension Book: Codable {
         url = try values.decodeIfPresent(String.self, forKey: .url) ?? ""
         author = try values.decodeIfPresent(String.self, forKey: .author) ?? ""
         currency = try values.decodeIfPresent(String.self, forKey: .currency) ?? ""
-        releaseDate = try values.decodeIfPresent(String.self, forKey: .releaseDate) ?? ""
         price = try values.decodeIfPresent(Double.self, forKey: .price) ?? 0
         rating = try values.decodeIfPresent(Double.self, forKey: .rating) ?? 0
         ratingCount = try values.decodeIfPresent(Int.self, forKey: .ratingCount) ?? 0
+        genres = try values.decodeIfPresent([String].self, forKey: .genres) ?? []
     }
 }

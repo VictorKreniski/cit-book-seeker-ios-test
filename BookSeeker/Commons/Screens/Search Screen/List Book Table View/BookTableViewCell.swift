@@ -108,7 +108,6 @@ final class BookTableViewCell: UITableViewCell, Drawable {
 
 extension BookTableViewCell {
     func updateWith(_ book: Book) {
-        coverImageView.imageFromURL(urlString: book.imageUrl)
         authorLabel.text = book.author
         titleLabel.text = book.name
         if let rating = book.rating {

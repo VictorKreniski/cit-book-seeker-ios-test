@@ -6,7 +6,7 @@
 //  Copyright © 2020 CIT. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol BookViewModelDataUpdateNotification: class {
     func newData()
@@ -23,7 +23,6 @@ final class BookViewModel {
             case let .success(iTunesResponse):
                 self.books = iTunesResponse.results
                 self.updateHandler()
-                print(self.books)
             case let .failure(error):
                 print(error)
             }

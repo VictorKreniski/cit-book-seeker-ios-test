@@ -31,7 +31,6 @@ final class ListBooksTableViewController: UITableViewController {
             }
         }
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookViewModel.books.count
     }
@@ -39,6 +38,13 @@ final class ListBooksTableViewController: UITableViewController {
         let genericCell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath)
         if let bookCell = genericCell as? BookTableViewCell {
             bookCell.updateWith(bookViewModel.books[indexPath.row])
+            bookCell.coverImageView.image = nil
+            bookCell.tag = indexPath.row
+            DispatchQueue.main.async {
+                if bookCell.tag == indexPath.row {
+                    bookCell.coverImageView.imageFromURL(urlString: self.bookViewModel.books[indexPath.row].imageUrl)
+                }
+            }
             bookCell.draw()
         }
         return genericCell
