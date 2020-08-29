@@ -10,7 +10,7 @@ import UIKit
 
 final class SearchTermTableViewController: UITableViewController {
     let searchViewModel: SearchViewModel
-    weak var searchViewControllerDelegate: SearchViewControllerDelegate?
+    weak var searchViewControllerDelegateSelectedTerm: SearchViewControllerDelegateSelectedTerm?
     init(searchViewModel: SearchViewModel) {
         self.searchViewModel = searchViewModel
         super.init(style: .plain)
@@ -49,6 +49,6 @@ final class SearchTermTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchViewControllerDelegate?.search(searchViewModel.termsUsed[indexPath.row])
+        searchViewControllerDelegateSelectedTerm?.search(searchViewModel.termsUsed[indexPath.row])
     }
 }

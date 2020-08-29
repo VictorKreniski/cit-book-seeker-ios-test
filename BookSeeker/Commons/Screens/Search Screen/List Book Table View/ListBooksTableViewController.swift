@@ -10,6 +10,7 @@ import UIKit
 
 final class ListBooksTableViewController: UITableViewController {
     let bookViewModel: BookViewModel
+    weak var searchViewControlelrDelegateSelectedBook: SearchViewControllerDelegateSelectedBook?
     init(bookViewModel: BookViewModel) {
         self.bookViewModel = bookViewModel
         super.init(style: .plain)
@@ -58,5 +59,6 @@ final class ListBooksTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchViewControlelrDelegateSelectedBook?.selectedIndex(indexPath.row)
     }
 }

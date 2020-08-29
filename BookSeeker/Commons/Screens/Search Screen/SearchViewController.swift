@@ -8,8 +8,11 @@
 
 import UIKit
 
-protocol SearchViewControllerDelegate: class {
+protocol SearchViewControllerDelegateSelectedTerm: class {
     func search(_ term: String)
+}
+protocol SearchViewControllerDelegateSelectedBook: class {
+    func selectedIndex(_ bookIndex: Int)
 }
 
 final class SearchViewController: UIViewController, Drawable {
@@ -17,7 +20,8 @@ final class SearchViewController: UIViewController, Drawable {
     let listBooksTableViewController: ListBooksTableViewController
     let searchViewModel: SearchViewModel
     let searchBar: UISearchBar = UISearchBar()
-    weak var searchCoordinatorDelegate: SearchCoordinatorDelegate?
+    weak var searchCoordinatorDelegatePressedToSearch: SearchCoordinatorDelegatePressedToSearch?
+    weak var searchCoordinatorDelegateSelectedBook: SearchCoordinatorDelegateSelectedBook?
     var currentSearchText: String = ""
     var isShowingBooksResult = false {
         didSet {
@@ -82,7 +86,8 @@ final class SearchViewController: UIViewController, Drawable {
                                                     constant: -15).isActive = true
     }
     func setupAdditionalConfigurations() {
-        self.searchTermTableViewController.searchViewControllerDelegate = self
+        self.searchTermTableViewController.searchViewControllerDelegateSelectedTerm = self
+        self.listBooksTableViewController.searchViewControlelrDelegateSelectedBook = self
         setupSearchBar()
         listBooksTableViewController.view.alpha = 0
     }
@@ -107,16 +112,22 @@ extension SearchViewController: UISearchBarDelegate {
         }
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchCoordinatorDelegate?.pressedToSearch(currentSearchText)
+        searchCoordinatorDelegatePressedToSearch?.pressedToSearch(currentSearchText)
         isShowingBooksResult = true
     }
 }
 
-extension SearchViewController: SearchViewControllerDelegate {
+extension SearchViewController: SearchViewControllerDelegateSelectedTerm {
     func search(_ term: String) {
         isShowingBooksResult = true
         currentSearchText = term
         searchBar.text = term
-        searchCoordinatorDelegate?.pressedToSearch(currentSearchText)
+        searchCoordinatorDelegatePressedToSearch?.pressedToSearch(currentSearchText)
+    }
+}
+
+extension SearchViewController: SearchViewControllerDelegateSelectedBook {
+    func selectedIndex(_ bookIndex: Int) {
+        searchCoordinatorDelegateSelectedBook?.selectedIndex(bookIndex)
     }
 }

@@ -8,8 +8,11 @@
 
 import UIKit
 
-protocol SearchCoordinatorDelegate: class {
+protocol SearchCoordinatorDelegatePressedToSearch: class {
     func pressedToSearch(_ term: String)
+}
+protocol SearchCoordinatorDelegateSelectedBook: class {
+    func selectedIndex(_ bookIndex: Int)
 }
 
 final class SearchCoordinator: Coordinator {
@@ -22,7 +25,8 @@ final class SearchCoordinator: Coordinator {
         self.searchViewModel = searchViewModel
         self.bookViewModel = bookViewModel
         self.searchViewController = SearchViewController(searchViewModel: searchViewModel, bookViewModel: bookViewModel)
-        searchViewController.searchCoordinatorDelegate = self
+        searchViewController.searchCoordinatorDelegatePressedToSearch = self
+        searchViewController.searchCoordinatorDelegateSelectedBook = self
     }
     func start() {
         searchViewController.title = "Search"
@@ -33,10 +37,19 @@ final class SearchCoordinator: Coordinator {
     }
 }
 
-extension SearchCoordinator: SearchCoordinatorDelegate {
+extension SearchCoordinator: SearchCoordinatorDelegatePressedToSearch {
     func pressedToSearch(_ term: String) {
         searchViewModel.searched(term)
         searchViewController.searchTermTableViewController.tableView.reloadData()
+        searchViewController.dismissKeyboard()
         bookViewModel.updateBooksBy(term: term)
+    }
+}
+
+extension SearchCoordinator: SearchCoordinatorDelegateSelectedBook {
+    func selectedIndex(_ bookIndex: Int) {
+        let detailedBookCoordinator = DetailedBookCoordinator(
+            navigationController: navigationController, bookViewModel: bookViewModel, selectedBookIndex: bookIndex)
+        detailedBookCoordinator.start()
     }
 }
