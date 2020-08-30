@@ -11,7 +11,7 @@ import XCTest
 
 class ITunesBookServiceTests: XCTestCase {
 
-    private let timeout: TimeInterval = 5.0
+    private let timeout = 5.0
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

@@ -18,7 +18,6 @@ final class BookViewModelController {
     private var sessionProvider: URLSessionProvider = URLSessionProvider()
     func updateBooksBy(term: String) {
         books.removeAll()
-        self.updateHandler()
         sessionProvider.request(type: ITunesResponse.self,
                                 service: ItunesBookService.eBookSearch(term: term)) { (response) in
             switch response {

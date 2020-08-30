@@ -38,6 +38,7 @@
 		61C407E824F9CF81001A6AAC /* BookViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407E724F9CF81001A6AAC /* BookViewModelController.swift */; };
 		61C407EA24FA891A001A6AAC /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407E924FA891A001A6AAC /* BookTableViewCell.swift */; };
 		61C407EC24FA9213001A6AAC /* UIImageView+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407EB24FA9213001A6AAC /* UIImageView+URLRequest.swift */; };
+		61CA84C024FC1944009CF34C /* BookViewModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA84BF24FC1944009CF34C /* BookViewModelControllerTests.swift */; };
 		61E9DA8B24F97C5D0031604E /* SearchTermsViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA8A24F97C5D0031604E /* SearchTermsViewModelController.swift */; };
 		61E9DA8D24F97EF40031604E /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA8C24F97EF40031604E /* UIView+RoundedCorners.swift */; };
 		61E9DA9124F9B0210031604E /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA9024F9B0210031604E /* UIViewController+HideKeyboard.swift */; };
@@ -104,6 +105,7 @@
 		61C407E724F9CF81001A6AAC /* BookViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModelController.swift; sourceTree = "<group>"; };
 		61C407E924FA891A001A6AAC /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		61C407EB24FA9213001A6AAC /* UIImageView+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URLRequest.swift"; sourceTree = "<group>"; };
+		61CA84BF24FC1944009CF34C /* BookViewModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModelControllerTests.swift; sourceTree = "<group>"; };
 		61E9DA8A24F97C5D0031604E /* SearchTermsViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermsViewModelController.swift; sourceTree = "<group>"; };
 		61E9DA8C24F97EF40031604E /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
 		61E9DA9024F9B0210031604E /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
@@ -391,8 +393,9 @@
 			isa = PBXGroup;
 			children = (
 				B1B751FA233D28D8002C83F2 /* ITunesBookServiceTests.swift */,
-				B1B751FC233D28D8002C83F2 /* Info.plist */,
 				61C1926B24FC111300BA6C6B /* SearchTermsViewModelControllerTests.swift */,
+				61CA84BF24FC1944009CF34C /* BookViewModelControllerTests.swift */,
+				B1B751FC233D28D8002C83F2 /* Info.plist */,
 			);
 			path = BookSeekerTests;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C1926C24FC111300BA6C6B /* SearchTermsViewModelControllerTests.swift in Sources */,
+				61CA84C024FC1944009CF34C /* BookViewModelControllerTests.swift in Sources */,
 				B1B751FB233D28D8002C83F2 /* ITunesBookServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
