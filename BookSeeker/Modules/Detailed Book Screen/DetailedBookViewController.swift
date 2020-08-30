@@ -88,6 +88,7 @@ final class DetailedBookViewController: UIViewController, Drawable {
         bookDescriptionLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         bookDescriptionLabel.tintColor = .black
         bookDescriptionLabel.textAlignment = .justified
+        coverImageView.contentMode = .scaleAspectFit
     }
     func makeConstraints() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,6 +107,7 @@ final class DetailedBookViewController: UIViewController, Drawable {
         verticalStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         verticalStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         coverImageView.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        coverImageView.heightAnchor.constraint(equalTo: coverImageView.widthAnchor).isActive = true
     }
     func setupAdditionalConfigurations() {
         updateWith(book)
@@ -114,6 +116,7 @@ final class DetailedBookViewController: UIViewController, Drawable {
 
 extension DetailedBookViewController {
     func updateWith(_ book: Book) {
+        coverImageView.image = UIImage(systemName: "globe")
         let bookCoverUrlWithHigherQuality = book.imageUrl.replacingOccurrences(of: "100x100", with: "500x500")
         coverImageView.imageFromURL(urlString: bookCoverUrlWithHigherQuality)
         titleLabel.text = book.name
