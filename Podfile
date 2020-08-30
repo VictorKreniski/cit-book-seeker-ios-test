@@ -8,7 +8,7 @@ target 'BookSeeker' do
 
   # Pods for BookSeeker
   pod 'SwiftLint', '~> 0.33'
-
+  
   target 'BookSeekerTests' do
     inherit! :search_paths
     # Pods for testing
