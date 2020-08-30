@@ -32,8 +32,7 @@ class BookViewModelControllerTests: XCTestCase {
     func testRequestCoverImage() {
         let imageView = UIImageView()
         let timeout = 5.0
-        let imagedatabase = "https://is1-ssl.mzstatic.com/image/thumb/"
-        let staticArtWork = imagedatabase +
+        let staticArtWork = "https://is1-ssl.mzstatic.com/image/thumb/" +
         "Publication113/v4/38/77/d2/3877d20b-95c9-af96-9ee4-aaced107fa14/source/60x60bb.jpg"
         let expectation = XCTestExpectation(
             description: "ImageView should receive a Book Cover")
