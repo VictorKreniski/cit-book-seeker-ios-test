@@ -10,9 +10,10 @@ import Foundation
 
 final class SearchTermsViewModelController {
     private(set) var termsUsed: [String]
-    private let userDefaultStandard = UserDefaults.standard
-    init() {
-        termsUsed = userDefaultStandard.object(forKey: Constants.UserDefaultKeys.usedTermsKey) as? [String] ?? []
+    private let userDefault: UserDefaults
+    init(userDefault: UserDefaults = UserDefaults.standard) {
+        self.userDefault = userDefault
+        termsUsed = userDefault.object(forKey: Constants.UserDefaultKeys.usedTermsKey) as? [String] ?? []
     }
     func searched(_ term: String) {
         if termsUsed.contains(term) {
@@ -23,6 +24,9 @@ final class SearchTermsViewModelController {
         }
 
         termsUsed.insert(term, at: 0)
-        userDefaultStandard.set(termsUsed, forKey: Constants.UserDefaultKeys.usedTermsKey)
+        persistSearched(term)
+    }
+    private func persistSearched(_ term: String) {
+        userDefault.set(termsUsed, forKey: Constants.UserDefaultKeys.usedTermsKey)
     }
 }
