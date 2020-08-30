@@ -9,9 +9,9 @@
 import UIKit
 
 final class ListBooksTableViewController: UITableViewController, Drawable {
-    let bookViewModel: BookViewModel
+    let bookViewModel: BookViewModelController
     weak var searchViewControlerDelegateSelectedBook: SearchViewControllerDelegateSelectedBook?
-    init(bookViewModel: BookViewModel) {
+    init(bookViewModel: BookViewModelController) {
         self.bookViewModel = bookViewModel
         super.init(style: .plain)
     }

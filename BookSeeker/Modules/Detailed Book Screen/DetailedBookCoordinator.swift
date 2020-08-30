@@ -10,9 +10,9 @@ import UIKit
 
 final class DetailedBookCoordinator: Coordinator {
     var navigationController: UINavigationController
-    let bookViewModel: BookViewModel
+    let bookViewModel: BookViewModelController
     let selectedBookIndex: Int
-    init(navigationController: UINavigationController, bookViewModel: BookViewModel, selectedBookIndex: Int) {
+    init(navigationController: UINavigationController, bookViewModel: BookViewModelController, selectedBookIndex: Int) {
         self.navigationController = navigationController
         self.bookViewModel = bookViewModel
         self.selectedBookIndex = selectedBookIndex

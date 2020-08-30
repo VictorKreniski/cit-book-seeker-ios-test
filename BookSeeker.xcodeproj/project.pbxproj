@@ -34,10 +34,10 @@
 		6183C0BE24F96FE500AA1601 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6183C0BD24F96FE500AA1601 /* UIColor+HexString.swift */; };
 		6193301E24FADA1000284767 /* DetailedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6193301D24FADA1000284767 /* DetailedBookViewController.swift */; };
 		61C407E524F9BDC3001A6AAC /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407E424F9BDC3001A6AAC /* SearchCoordinator.swift */; };
-		61C407E824F9CF81001A6AAC /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407E724F9CF81001A6AAC /* BookViewModel.swift */; };
+		61C407E824F9CF81001A6AAC /* BookViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407E724F9CF81001A6AAC /* BookViewModelController.swift */; };
 		61C407EA24FA891A001A6AAC /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407E924FA891A001A6AAC /* BookTableViewCell.swift */; };
 		61C407EC24FA9213001A6AAC /* UIImageView+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C407EB24FA9213001A6AAC /* UIImageView+URLRequest.swift */; };
-		61E9DA8B24F97C5D0031604E /* SearchTermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA8A24F97C5D0031604E /* SearchTermViewModel.swift */; };
+		61E9DA8B24F97C5D0031604E /* SearchTermsViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA8A24F97C5D0031604E /* SearchTermsViewModelController.swift */; };
 		61E9DA8D24F97EF40031604E /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA8C24F97EF40031604E /* UIView+RoundedCorners.swift */; };
 		61E9DA9124F9B0210031604E /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA9024F9B0210031604E /* UIViewController+HideKeyboard.swift */; };
 		61E9DA9324F9B8AF0031604E /* SearchTermTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E9DA9224F9B8AF0031604E /* SearchTermTableViewController.swift */; };
@@ -99,10 +99,10 @@
 		6183C0BD24F96FE500AA1601 /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		6193301D24FADA1000284767 /* DetailedBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedBookViewController.swift; sourceTree = "<group>"; };
 		61C407E424F9BDC3001A6AAC /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
-		61C407E724F9CF81001A6AAC /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		61C407E724F9CF81001A6AAC /* BookViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModelController.swift; sourceTree = "<group>"; };
 		61C407E924FA891A001A6AAC /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		61C407EB24FA9213001A6AAC /* UIImageView+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URLRequest.swift"; sourceTree = "<group>"; };
-		61E9DA8A24F97C5D0031604E /* SearchTermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermViewModel.swift; sourceTree = "<group>"; };
+		61E9DA8A24F97C5D0031604E /* SearchTermsViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermsViewModelController.swift; sourceTree = "<group>"; };
 		61E9DA8C24F97EF40031604E /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
 		61E9DA9024F9B0210031604E /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		61E9DA9224F9B8AF0031604E /* SearchTermTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermTableViewController.swift; sourceTree = "<group>"; };
@@ -277,7 +277,8 @@
 		61B4DCC024FB34AB00D9C982 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				61C407E724F9CF81001A6AAC /* BookViewModel.swift */,
+				61E9DA8A24F97C5D0031604E /* SearchTermsViewModelController.swift */,
+				61C407E724F9CF81001A6AAC /* BookViewModelController.swift */,
 				610A935024FAD8CA008707F7 /* Detailed Book Screen */,
 				61B4DCC124FB34D300D9C982 /* LaunchScreen */,
 				61E9DA9424F9B8CE0031604E /* Search Screen */,
@@ -334,7 +335,6 @@
 				61C407E424F9BDC3001A6AAC /* SearchCoordinator.swift */,
 				B1B751E7233D28D6002C83F2 /* SearchViewController.swift */,
 				61E9DA9224F9B8AF0031604E /* SearchTermTableViewController.swift */,
-				61E9DA8A24F97C5D0031604E /* SearchTermViewModel.swift */,
 				610A935324FAD912008707F7 /* List Book Table View */,
 			);
 			path = "Search Screen";
@@ -631,7 +631,7 @@
 				61278F8D24F9221B00CB17B4 /* ProviderProtocol.swift in Sources */,
 				6183C0BE24F96FE500AA1601 /* UIColor+HexString.swift in Sources */,
 				61278FA524F9231C00CB17B4 /* URLComponents+ServiceProtocol.swift in Sources */,
-				61C407E824F9CF81001A6AAC /* BookViewModel.swift in Sources */,
+				61C407E824F9CF81001A6AAC /* BookViewModelController.swift in Sources */,
 				B1B751E4233D28D6002C83F2 /* AppDelegate.swift in Sources */,
 				61278F9724F9227700CB17B4 /* NetworkTypealias.swift in Sources */,
 				61278F8F24F9222500CB17B4 /* URLSessionProvider.swift in Sources */,
@@ -650,7 +650,7 @@
 				61278F9524F9226400CB17B4 /* URLSession+URLSessionProtocol.swift in Sources */,
 				61E9DA9124F9B0210031604E /* UIViewController+HideKeyboard.swift in Sources */,
 				6183C0B824F9619C00AA1601 /* Drawable.swift in Sources */,
-				61E9DA8B24F97C5D0031604E /* SearchTermViewModel.swift in Sources */,
+				61E9DA8B24F97C5D0031604E /* SearchTermsViewModelController.swift in Sources */,
 				61278F9D24F9228E00CB17B4 /* NetworkError.swift in Sources */,
 				61E9DA9324F9B8AF0031604E /* SearchTermTableViewController.swift in Sources */,
 				61C407EA24FA891A001A6AAC /* BookTableViewCell.swift in Sources */,

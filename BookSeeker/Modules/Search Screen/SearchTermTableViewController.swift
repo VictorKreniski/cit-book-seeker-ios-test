@@ -9,9 +9,9 @@
 import UIKit
 
 final class SearchTermTableViewController: UITableViewController {
-    let searchViewModel: SearchTermViewModel
+    let searchViewModel: SearchTermsViewModelController
     weak var searchViewControllerDelegateSelectedTerm: SearchViewControllerDelegateSelectedTerm?
-    init(searchViewModel: SearchTermViewModel) {
+    init(searchViewModel: SearchTermsViewModelController) {
         self.searchViewModel = searchViewModel
         super.init(style: .plain)
     }

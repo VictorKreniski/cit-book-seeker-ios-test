@@ -1,5 +1,5 @@
 //
-//  BookViewModel.swift
+//  BookViewModelController.swift
 //  BookSeeker
 //
 //  Created by Victor Kreniski on 28/08/20.
@@ -12,7 +12,7 @@ protocol BookViewModelDataUpdateNotification: class {
     func newData()
 }
 
-final class BookViewModel {
+final class BookViewModelController {
     var updateHandler: () -> Void = {}
     private(set) var books: [Book] = []
     private var sessionProvider: URLSessionProvider = URLSessionProvider()

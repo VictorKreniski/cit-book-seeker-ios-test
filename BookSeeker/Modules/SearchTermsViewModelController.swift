@@ -1,5 +1,5 @@
 //
-//  SearchTermViewModel.swift
+//  SearchTermsViewModelController.swift
 //  BookSeeker
 //
 //  Created by Victor Kreniski on 28/08/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SearchTermViewModel {
+final class SearchTermsViewModelController {
     private(set) var termsUsed: [String]
     private let userDefaultStandard = UserDefaults.standard
     init() {

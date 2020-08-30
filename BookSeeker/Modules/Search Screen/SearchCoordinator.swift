@@ -17,11 +17,11 @@ protocol SearchCoordinatorDelegateSelectedBook: class {
 
 final class SearchCoordinator: Coordinator {
     var navigationController: UINavigationController
-    private let searchViewModel: SearchTermViewModel
-    private let bookViewModel: BookViewModel
+    private let searchViewModel: SearchTermsViewModelController
+    private let bookViewModel: BookViewModelController
     private let searchViewController: SearchViewController
-    init(navigationController: UINavigationController, searchViewModel: SearchTermViewModel,
-         bookViewModel: BookViewModel) {
+    init(navigationController: UINavigationController, searchViewModel: SearchTermsViewModelController,
+         bookViewModel: BookViewModelController) {
         self.navigationController = navigationController
         self.searchViewModel = searchViewModel
         self.bookViewModel = bookViewModel
