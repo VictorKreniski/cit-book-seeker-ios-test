@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ListBooksTableViewController: UITableViewController {
+final class ListBooksTableViewController: UITableViewController, Drawable {
     let bookViewModel: BookViewModel
     weak var searchViewControlerDelegateSelectedBook: SearchViewControllerDelegateSelectedBook?
     init(bookViewModel: BookViewModel) {
@@ -19,12 +19,20 @@ final class ListBooksTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     override func viewDidLoad() {
-        tableView.register(BookTableViewCell.self, forCellReuseIdentifier: "bookCell")
-        tableView.dataSource = self
+        super.viewDidLoad()
+        draw()
+    }
+    func buildViewHierarchy() {}
+    func makeConstraints() {}
+    func stylizeView() {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.layer.shadowRadius = 8
         tableView.roundCorners(corners: [.topLeft, .topRight], radius: 8)
+    }
+    func setupAdditionalConfigurations() {
+        tableView.register(BookTableViewCell.self, forCellReuseIdentifier: "bookCell")
+        tableView.dataSource = self
         bookViewModel.updateHandler = {
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()

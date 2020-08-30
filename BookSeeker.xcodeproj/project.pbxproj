@@ -179,7 +179,6 @@
 		610A935324FAD912008707F7 /* List Book Table View */ = {
 			isa = PBXGroup;
 			children = (
-				61C407E724F9CF81001A6AAC /* BookViewModel.swift */,
 				61E9DA9524F9B8FD0031604E /* ListBooksTableViewController.swift */,
 				61C407E924FA891A001A6AAC /* BookTableViewCell.swift */,
 			);
@@ -278,6 +277,7 @@
 		61B4DCC024FB34AB00D9C982 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				61C407E724F9CF81001A6AAC /* BookViewModel.swift */,
 				610A935024FAD8CA008707F7 /* Detailed Book Screen */,
 				61B4DCC124FB34D300D9C982 /* LaunchScreen */,
 				61E9DA9424F9B8CE0031604E /* Search Screen */,
