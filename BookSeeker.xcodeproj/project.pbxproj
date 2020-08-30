@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,7 @@
 		61278FAF24F9320100CB17B4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FAE24F9320100CB17B4 /* Book.swift */; };
 		61278FB124F9324700CB17B4 /* Book+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61278FB024F9324700CB17B4 /* Book+Codable.swift */; };
 		612B4FC524F91EC9001A1BB2 /* iTunesSearchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 612B4FC424F91EC9001A1BB2 /* iTunesSearchData.json */; };
+		615712D024FC6705004FF530 /* UISnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615712CF24FC6705004FF530 /* UISnapshotTest.swift */; };
 		6183C0B824F9619C00AA1601 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6183C0B724F9619C00AA1601 /* Drawable.swift */; };
 		6183C0BA24F96DD900AA1601 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6183C0B924F96DD900AA1601 /* Constants.swift */; };
 		6183C0BE24F96FE500AA1601 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6183C0BD24F96FE500AA1601 /* UIColor+HexString.swift */; };
@@ -95,6 +96,7 @@
 		61278FAE24F9320100CB17B4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		61278FB024F9324700CB17B4 /* Book+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Codable.swift"; sourceTree = "<group>"; };
 		612B4FC424F91EC9001A1BB2 /* iTunesSearchData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iTunesSearchData.json; sourceTree = "<group>"; };
+		615712CF24FC6705004FF530 /* UISnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISnapshotTest.swift; sourceTree = "<group>"; };
 		6183C0B724F9619C00AA1601 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		6183C0B924F96DD900AA1601 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6183C0BD24F96FE500AA1601 /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				61C1926B24FC111300BA6C6B /* SearchTermsViewModelControllerTests.swift */,
 				61CA84BF24FC1944009CF34C /* BookViewModelControllerTests.swift */,
 				B1B751FC233D28D8002C83F2 /* Info.plist */,
+				615712CF24FC6705004FF530 /* UISnapshotTest.swift */,
 			);
 			path = BookSeekerTests;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				B1B751F2233D28D8002C83F2 /* Sources */,
 				B1B751F3233D28D8002C83F2 /* Frameworks */,
 				B1B751F4233D28D8002C83F2 /* Resources */,
+				595C9933CD96FE16B932C868 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -562,6 +566,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		595C9933CD96FE16B932C868 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookSeekerTests/Pods-BookSeekerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookSeekerTests/Pods-BookSeekerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookSeekerTests/Pods-BookSeekerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		61CC43BE24F892D600F28C52 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C1926C24FC111300BA6C6B /* SearchTermsViewModelControllerTests.swift in Sources */,
+				615712D024FC6705004FF530 /* UISnapshotTest.swift in Sources */,
 				61CA84C024FC1944009CF34C /* BookViewModelControllerTests.swift in Sources */,
 				B1B751FB233D28D8002C83F2 /* ITunesBookServiceTests.swift in Sources */,
 			);
