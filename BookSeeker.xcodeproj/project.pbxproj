@@ -49,7 +49,7 @@
 		B1B751E8233D28D6002C83F2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B751E7233D28D6002C83F2 /* SearchViewController.swift */; };
 		B1B751ED233D28D8002C83F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B751EC233D28D8002C83F2 /* Assets.xcassets */; };
 		B1B751F0233D28D8002C83F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B751EE233D28D8002C83F2 /* LaunchScreen.storyboard */; };
-		B1B751FB233D28D8002C83F2 /* BookSeekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B751FA233D28D8002C83F2 /* BookSeekerTests.swift */; };
+		B1B751FB233D28D8002C83F2 /* ITunesBookServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B751FA233D28D8002C83F2 /* ITunesBookServiceTests.swift */; };
 		B1B75206233D28D9002C83F2 /* BookSeekerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B75205233D28D9002C83F2 /* BookSeekerUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,7 +118,7 @@
 		B1B751EF233D28D8002C83F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1B751F1233D28D8002C83F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1B751F6233D28D8002C83F2 /* BookSeekerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookSeekerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1B751FA233D28D8002C83F2 /* BookSeekerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSeekerTests.swift; sourceTree = "<group>"; };
+		B1B751FA233D28D8002C83F2 /* ITunesBookServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesBookServiceTests.swift; sourceTree = "<group>"; };
 		B1B751FC233D28D8002C83F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1B75201233D28D9002C83F2 /* BookSeekerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookSeekerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B75205233D28D9002C83F2 /* BookSeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSeekerUITests.swift; sourceTree = "<group>"; };
@@ -308,11 +308,11 @@
 			children = (
 				61B4DCBC24FB33F300D9C982 /* Assets */,
 				6183C0B924F96DD900AA1601 /* Constants.swift */,
-				61278FAB24F931D400CB17B4 /* Models */,
 				61B4DCBE24FB344D00D9C982 /* Extensions */,
+				61278FAB24F931D400CB17B4 /* Models */,
+				61CC43BD24F88FAE00F28C52 /* Network */,
 				61B4DCC324FB359400D9C982 /* Protocols */,
 				61125BB824F94EA800B0438E /* Services */,
-				61CC43BD24F88FAE00F28C52 /* Network */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 		B1B751F9233D28D8002C83F2 /* BookSeekerTests */ = {
 			isa = PBXGroup;
 			children = (
-				B1B751FA233D28D8002C83F2 /* BookSeekerTests.swift */,
+				B1B751FA233D28D8002C83F2 /* ITunesBookServiceTests.swift */,
 				B1B751FC233D28D8002C83F2 /* Info.plist */,
 			);
 			path = BookSeekerTests;
@@ -668,7 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1B751FB233D28D8002C83F2 /* BookSeekerTests.swift in Sources */,
+				B1B751FB233D28D8002C83F2 /* ITunesBookServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

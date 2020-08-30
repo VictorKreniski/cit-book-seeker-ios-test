@@ -1,6 +1,6 @@
 //
-//  BookViewModelControllerTests.swift
-//  BookViewModelControllerTests
+//  ITunesBookServiceTests.swift
+//  ITunesBookServiceTests
 //
 //  Created by Teobaldo Mauro de Moura on 26/09/19.
 //  Copyright © 2019 CIT. All rights reserved.
@@ -9,9 +9,9 @@
 import XCTest
 @testable import BookSeeker
 
-class BookViewModelControllerTests: XCTestCase {
+class ITunesBookServiceTests: XCTestCase {
 
-    private let timeout: TimeInterval = 10.0
+    private let timeout: TimeInterval = 5.0
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -36,27 +36,22 @@ class BookViewModelControllerTests: XCTestCase {
         }
         wait(for: [expectation], timeout: timeout)
     }
-    func testRequestSwiftFromItunesShouldBeSuccess() {
-        let sessionProvider = URLSessionProvider()
-        let term = "World of Warcraft"
-        let expectation = XCTestExpectation(description: "GET Request should retrieve data from iTunes API")
-        sessionProvider.request(type: ITunesResponse.self,
-                                service: ItunesBookService.eBookSearch(term: term)) { (response) in
-            switch response {
-            case let .success(iTunesResponse):
-                XCTAssertNotNil(iTunesResponse)
-            case let .failure(error):
-                XCTFail("GET Books from iTunes failed with error: \(error)")
-            }
-            expectation.fulfill()
+    func testJsonDecoding() {
+        let resourceName = "iTunesSearchData"
+        let extensionName = "json"
+        guard let url = Bundle.main.url(forResource: resourceName,
+                                        withExtension: extensionName) else {
+                                            XCTFail("Missing file \(resourceName).\(extensionName)")
+                                            return
         }
-        wait(for: [expectation], timeout: timeout)
-    }
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        do {
+            let data = try Data(contentsOf: url)
+            let iTunesResponse = try JSONDecoder().decode(ITunesResponse.self, from: data)
+            XCTAssertEqual(iTunesResponse.resultCount, 50)
+            XCTAssertEqual(iTunesResponse.resultCount, iTunesResponse.results.count)
+            XCTAssertNotNil(iTunesResponse.results[0])
+        } catch let error {
+            XCTFail("Failed - Error: \(error.localizedDescription)")
         }
     }
-
 }
