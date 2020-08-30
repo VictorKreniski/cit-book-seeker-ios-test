@@ -18,7 +18,7 @@ protocol SearchViewControllerDelegateSelectedBook: class {
 final class SearchViewController: UIViewController, Drawable {
     let searchTermTableViewController: SearchTermTableViewController
     let listBooksTableViewController: ListBooksTableViewController
-    let searchViewModel: SearchViewModel
+    let searchViewModel: SearchTermViewModel
     let searchBar: UISearchBar = UISearchBar()
     weak var searchCoordinatorDelegatePressedToSearch: SearchCoordinatorDelegatePressedToSearch?
     weak var searchCoordinatorDelegateSelectedBook: SearchCoordinatorDelegateSelectedBook?
@@ -28,7 +28,7 @@ final class SearchViewController: UIViewController, Drawable {
             updateUIState()
         }
     }
-    init(searchViewModel: SearchViewModel, bookViewModel: BookViewModel) {
+    init(searchViewModel: SearchTermViewModel, bookViewModel: BookViewModel) {
         self.searchViewModel = searchViewModel
         self.searchTermTableViewController = SearchTermTableViewController(searchViewModel: searchViewModel)
         self.listBooksTableViewController = ListBooksTableViewController(bookViewModel: bookViewModel)

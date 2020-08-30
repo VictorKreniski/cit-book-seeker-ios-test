@@ -10,7 +10,7 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
-    let searchViewModel = SearchViewModel()
+    let searchViewModel = SearchTermViewModel()
     let bookViewModel = BookViewModel()
     let searchCoordinator: SearchCoordinator
     init(navigationController: UINavigationController) {

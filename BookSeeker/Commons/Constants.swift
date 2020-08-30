@@ -13,4 +13,7 @@ struct Constants {
         static let primaryPink = UIColor(hexaString: "#FF968A")
         static let secondaryPink = UIColor(hexaString: "#FFC5BF")
     }
+    struct UserDefaultKeys {
+        static let usedTermsKey = "UsedTermsKey"
+    }
 }
