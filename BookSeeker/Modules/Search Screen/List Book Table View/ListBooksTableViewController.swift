@@ -35,6 +35,7 @@ final class ListBooksTableViewController: UITableViewController, Drawable {
         tableView.dataSource = self
         bookViewModel.updateHandler = {
             DispatchQueue.main.async { [weak self] in
+                self?.tableView.setContentOffset(.zero, animated: true)
                 self?.tableView.reloadData()
             }
         }
