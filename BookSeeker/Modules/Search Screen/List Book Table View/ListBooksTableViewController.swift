@@ -39,6 +39,12 @@ final class ListBooksTableViewController: UITableViewController, Drawable {
                 self?.tableView.reloadData()
             }
         }
+        bookViewModel.booksEmptyHandler = {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.setContentOffset(.zero, animated: true)
+                self?.tableView.reloadData()
+            }
+        }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookViewModel.books.count

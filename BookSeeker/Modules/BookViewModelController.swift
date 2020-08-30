@@ -14,10 +14,12 @@ protocol BookViewModelDataUpdateNotification: class {
 
 final class BookViewModelController {
     var updateHandler: () -> Void = {}
+    var booksEmptyHandler: () -> Void = {}
     private(set) var books: [Book] = []
     private var sessionProvider: URLSessionProvider = URLSessionProvider()
     func updateBooksBy(term: String) {
         books.removeAll()
+        booksEmptyHandler()
         sessionProvider.request(type: ITunesResponse.self,
                                 service: ItunesBookService.eBookSearch(term: term)) { (response) in
             switch response {
