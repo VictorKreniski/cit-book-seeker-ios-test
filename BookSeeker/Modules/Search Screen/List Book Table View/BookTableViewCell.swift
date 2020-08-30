@@ -66,6 +66,7 @@ final class BookTableViewCell: UITableViewCell, Drawable {
         containerView.addSubview(mainHorizontalStackView)
     }
     func stylizeView() {
+        selectionStyle = .none
         containerView.backgroundColor = Constants.Design.secondaryPink
         containerView.roundCorners(corners: .allCorners, radius: 8)
         authorLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
@@ -110,12 +111,8 @@ extension BookTableViewCell {
     func updateWith(_ book: Book) {
         authorLabel.text = book.author
         titleLabel.text = book.name
-        if let rating = book.rating {
-            starsEvaluationLabel.text = "\(rating)"
-        }
-        if let recomendation = book.ratingCount {
-            recomendationsLabel.text = "(\(recomendation))"
-        }
+        starsEvaluationLabel.text = "\(book.rating)"
+        recomendationsLabel.text = "(\(book.ratingCount))"
         priceLabel.text = book.price > 0 ? "$\(book.price) " + book.currency : "Free"
     }
 }

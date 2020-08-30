@@ -10,7 +10,7 @@ import UIKit
 
 final class ListBooksTableViewController: UITableViewController {
     let bookViewModel: BookViewModel
-    weak var searchViewControlelrDelegateSelectedBook: SearchViewControllerDelegateSelectedBook?
+    weak var searchViewControlerDelegateSelectedBook: SearchViewControllerDelegateSelectedBook?
     init(bookViewModel: BookViewModel) {
         self.bookViewModel = bookViewModel
         super.init(style: .plain)
@@ -38,11 +38,13 @@ final class ListBooksTableViewController: UITableViewController {
         let genericCell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath)
         if let bookCell = genericCell as? BookTableViewCell {
             bookCell.updateWith(bookViewModel.books[indexPath.row])
-            bookCell.coverImageView.image = nil
+            bookCell.coverImageView.image = UIImage(systemName: "globe")?
+                .withTintColor(.lightGray, renderingMode: .alwaysTemplate)
             bookCell.tag = indexPath.row
             DispatchQueue.main.async {
                 if bookCell.tag == indexPath.row {
-                    bookCell.coverImageView.imageFromURL(urlString: self.bookViewModel.books[indexPath.row].imageUrl)
+                    self.bookViewModel.requestCoverImage(of: self.bookViewModel.books[indexPath.row],
+                                                         for: bookCell.coverImageView)
                 }
             }
             bookCell.draw()
@@ -65,6 +67,6 @@ final class ListBooksTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchViewControlelrDelegateSelectedBook?.selectedIndex(indexPath.row)
+        searchViewControlerDelegateSelectedBook?.selectedIndex(indexPath.row)
     }
 }

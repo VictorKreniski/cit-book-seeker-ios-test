@@ -64,6 +64,7 @@ final class DetailedBookViewController: UIViewController, Drawable {
         scrollView.addSubview(verticalStackView)
     }
     func stylizeView() {
+        navigationController?.navigationBar.tintColor = .black
         containerView.roundCorners(corners: [.topLeft, .topRight], radius: 8)
         view.backgroundColor = Constants.Design.primaryPink
         containerView.backgroundColor = .white
@@ -119,12 +120,8 @@ extension DetailedBookViewController {
         authorLabel.text = "by: "+book.author
         genresLabel.text = "Genres: "+book.genres.joined(separator: ", ")
         bookDescriptionLabel.text = book.description
-        if let rating = book.rating {
-            starsEvaluationLabel.text = "\(rating)"
-        }
-        if let recomendation = book.ratingCount {
-            recomendationsLabel.text = "(\(recomendation))"
-        }
+        starsEvaluationLabel.text = "\(book.rating)"
+        recomendationsLabel.text = "(\(book.ratingCount))"
         priceLabel.text = book.price > 0 ? "$\(book.price) " + book.currency : "Free"
     }
 }

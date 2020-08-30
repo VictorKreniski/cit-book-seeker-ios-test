@@ -17,6 +17,8 @@ final class BookViewModel {
     private(set) var books: [Book] = []
     private var sessionProvider: URLSessionProvider = URLSessionProvider()
     func updateBooksBy(term: String) {
+        books.removeAll()
+        self.updateHandler()
         sessionProvider.request(type: ITunesResponse.self,
                                 service: ItunesBookService.eBookSearch(term: term)) { (response) in
             switch response {
@@ -27,5 +29,8 @@ final class BookViewModel {
                 print(error)
             }
         }
+    }
+    func requestCoverImage(of book: Book, for imageView: UIImageView) {
+        imageView.imageFromURL(urlString: book.imageUrl)
     }
 }

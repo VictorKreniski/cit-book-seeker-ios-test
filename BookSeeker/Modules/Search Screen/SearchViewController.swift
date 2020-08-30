@@ -87,7 +87,7 @@ final class SearchViewController: UIViewController, Drawable {
     }
     func setupAdditionalConfigurations() {
         self.searchTermTableViewController.searchViewControllerDelegateSelectedTerm = self
-        self.listBooksTableViewController.searchViewControlelrDelegateSelectedBook = self
+        self.listBooksTableViewController.searchViewControlerDelegateSelectedBook = self
         setupSearchBar()
         listBooksTableViewController.view.alpha = 0
     }

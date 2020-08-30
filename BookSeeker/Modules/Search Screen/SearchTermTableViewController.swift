@@ -32,6 +32,7 @@ final class SearchTermTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchTermCell", for: indexPath)
+        cell.selectionStyle = .gray
         cell.textLabel?.text = searchViewModel.termsUsed[indexPath.row]
         cell.textLabel?.tintColor = .black
         return cell

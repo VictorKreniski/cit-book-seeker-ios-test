@@ -9,6 +9,6 @@
 import Foundation
 
 enum NetworkError {
-    case unknown
+    case unknown(message: String)
     case noJSONData
 }

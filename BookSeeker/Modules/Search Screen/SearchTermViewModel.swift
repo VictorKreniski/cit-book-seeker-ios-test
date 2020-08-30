@@ -19,10 +19,10 @@ final class SearchTermViewModel {
             return
         }
         if termsUsed.count >= 8 {
-            termsUsed.removeFirst()
+            termsUsed.removeLast()
         }
 
-        termsUsed.append(term)
+        termsUsed.insert(term, at: 0)
         userDefaultStandard.set(termsUsed, forKey: Constants.UserDefaultKeys.usedTermsKey)
     }
 }
