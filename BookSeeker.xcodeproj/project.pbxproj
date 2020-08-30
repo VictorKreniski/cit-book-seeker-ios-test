@@ -179,6 +179,7 @@
 		610A935324FAD912008707F7 /* List Book Table View */ = {
 			isa = PBXGroup;
 			children = (
+				61C407E724F9CF81001A6AAC /* BookViewModel.swift */,
 				61E9DA9524F9B8FD0031604E /* ListBooksTableViewController.swift */,
 				61C407E924FA891A001A6AAC /* BookTableViewCell.swift */,
 			);
@@ -191,15 +192,6 @@
 				61278FA924F9261800CB17B4 /* ITunesBookService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		61125BBB24F95BDA00B0438E /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				610A935024FAD8CA008707F7 /* Detailed Book Screen */,
-				61E9DA9424F9B8CE0031604E /* Search Screen */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		61278FA624F9256200CB17B4 /* Protocols */ = {
@@ -252,23 +244,74 @@
 			path = Book;
 			sourceTree = "<group>";
 		};
-		61CC43BC24F88FA600F28C52 /* Commons */ = {
+		61B4DCBC24FB33F300D9C982 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				61E9DA8A24F97C5D0031604E /* SearchTermViewModel.swift */,
-				61C407E724F9CF81001A6AAC /* BookViewModel.swift */,
-				6183C0BD24F96FE500AA1601 /* UIColor+HexString.swift */,
-				61125BBB24F95BDA00B0438E /* Screens */,
-				61125BB824F94EA800B0438E /* Services */,
-				61278FAB24F931D400CB17B4 /* Models */,
-				61CC43BD24F88FAE00F28C52 /* Network */,
-				61125BB924F95B6900B0438E /* Coordinator.swift */,
+				612B4FC424F91EC9001A1BB2 /* iTunesSearchData.json */,
+				B1B751EC233D28D8002C83F2 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		61B4DCBD24FB340500D9C982 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				61125BBC24F95BE600B0438E /* AppCoordinator.swift */,
-				6183C0B724F9619C00AA1601 /* Drawable.swift */,
-				6183C0B924F96DD900AA1601 /* Constants.swift */,
+				B1B751E3233D28D6002C83F2 /* AppDelegate.swift */,
+				B1B751E5233D28D6002C83F2 /* SceneDelegate.swift */,
+				B1B751F1233D28D8002C83F2 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		61B4DCBE24FB344D00D9C982 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6183C0BD24F96FE500AA1601 /* UIColor+HexString.swift */,
 				61C407EB24FA9213001A6AAC /* UIImageView+URLRequest.swift */,
 				61E9DA8C24F97EF40031604E /* UIView+RoundedCorners.swift */,
 				61E9DA9024F9B0210031604E /* UIViewController+HideKeyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		61B4DCC024FB34AB00D9C982 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				610A935024FAD8CA008707F7 /* Detailed Book Screen */,
+				61B4DCC124FB34D300D9C982 /* LaunchScreen */,
+				61E9DA9424F9B8CE0031604E /* Search Screen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		61B4DCC124FB34D300D9C982 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B1B751EE233D28D8002C83F2 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		61B4DCC324FB359400D9C982 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				61125BB924F95B6900B0438E /* Coordinator.swift */,
+				6183C0B724F9619C00AA1601 /* Drawable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		61CC43BC24F88FA600F28C52 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				61B4DCBC24FB33F300D9C982 /* Assets */,
+				6183C0B924F96DD900AA1601 /* Constants.swift */,
+				61278FAB24F931D400CB17B4 /* Models */,
+				61B4DCBE24FB344D00D9C982 /* Extensions */,
+				61B4DCC324FB359400D9C982 /* Protocols */,
+				61125BB824F94EA800B0438E /* Services */,
+				61CC43BD24F88FAE00F28C52 /* Network */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -291,6 +334,7 @@
 				61C407E424F9BDC3001A6AAC /* SearchCoordinator.swift */,
 				B1B751E7233D28D6002C83F2 /* SearchViewController.swift */,
 				61E9DA9224F9B8AF0031604E /* SearchTermTableViewController.swift */,
+				61E9DA8A24F97C5D0031604E /* SearchTermViewModel.swift */,
 				610A935324FAD912008707F7 /* List Book Table View */,
 			);
 			path = "Search Screen";
@@ -334,13 +378,9 @@
 		B1B751E2233D28D6002C83F2 /* BookSeeker */ = {
 			isa = PBXGroup;
 			children = (
-				612B4FC424F91EC9001A1BB2 /* iTunesSearchData.json */,
+				61B4DCBD24FB340500D9C982 /* Application */,
 				61CC43BC24F88FA600F28C52 /* Commons */,
-				B1B751E3233D28D6002C83F2 /* AppDelegate.swift */,
-				B1B751E5233D28D6002C83F2 /* SceneDelegate.swift */,
-				B1B751EC233D28D8002C83F2 /* Assets.xcassets */,
-				B1B751EE233D28D8002C83F2 /* LaunchScreen.storyboard */,
-				B1B751F1233D28D8002C83F2 /* Info.plist */,
+				61B4DCC024FB34AB00D9C982 /* Modules */,
 			);
 			path = BookSeeker;
 			sourceTree = "<group>";
