@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -283,8 +283,6 @@
 		61B4DCC024FB34AB00D9C982 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				61E9DA8A24F97C5D0031604E /* SearchTermsViewModelController.swift */,
-				61C407E724F9CF81001A6AAC /* BookViewModelController.swift */,
 				610A935024FAD8CA008707F7 /* Detailed Book Screen */,
 				61B4DCC124FB34D300D9C982 /* LaunchScreen */,
 				61E9DA9424F9B8CE0031604E /* Search Screen */,
@@ -316,6 +314,7 @@
 				6183C0B924F96DD900AA1601 /* Constants.swift */,
 				61B4DCBE24FB344D00D9C982 /* Extensions */,
 				61278FAB24F931D400CB17B4 /* Models */,
+				61EB488C25005A67007EE3A1 /* Model View Controllers */,
 				61CC43BD24F88FAE00F28C52 /* Network */,
 				61B4DCC324FB359400D9C982 /* Protocols */,
 				61125BB824F94EA800B0438E /* Services */,
@@ -344,6 +343,15 @@
 				610A935324FAD912008707F7 /* List Book Table View */,
 			);
 			path = "Search Screen";
+			sourceTree = "<group>";
+		};
+		61EB488C25005A67007EE3A1 /* Model View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				61E9DA8A24F97C5D0031604E /* SearchTermsViewModelController.swift */,
+				61C407E724F9CF81001A6AAC /* BookViewModelController.swift */,
+			);
+			path = "Model View Controllers";
 			sourceTree = "<group>";
 		};
 		98F9D695D3979560F9D50360 /* Pods */ = {
