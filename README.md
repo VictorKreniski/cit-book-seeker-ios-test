@@ -1,8 +1,12 @@
 # iTunes Book Seeker - Challenge proposed by CI&T
 This project was builded withing 3 days and its objective consists in showing my knowledge at the iOS App development.
 The app consist in searching iTunes eBooks and being able to check more details, saving the last 10 words that were used to search.
-![search screen](https://github.com/VictorKreniski/cit-book-seeker-ios-test/blob/develop/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-09-02%20at%2020.07.44.png) ![list books screen](https://github.com/VictorKreniski/cit-book-seeker-ios-test/blob/develop/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-09-02%20at%2020.07.58.png) ![details book 1]https://github.com/VictorKreniski/cit-book-seeker-ios-test/blob/develop/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-09-02%20at%2020.08.22.png) ![details book 2](https://github.com/VictorKreniski/cit-book-seeker-ios-test/blob/develop/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202020-09-02%20at%2020.08.26.png)
 
+<p float="left">
+  <img src="Simulator Screen Shot - iPhone 8 - 2020-09-02 at 20.07.44.png" width="100" />
+  <img src="Simulator Screen Shot - iPhone 8 - 2020-09-02 at 20.07.58.png" width="100" /> 
+  <img src="Simulator Screen Shot - iPhone 8 - 2020-09-02 at 20.08.22.png" width="100" />
+</p>
 
 # Architecture
 
@@ -12,9 +16,6 @@ I've used MVVM to create the structure of the App, but wen't sligthy different o
 
 I've choosen [Framer](https://www.framer.com/) to prototype the App. 
 
-![prototype image](https://github.com/VictorKreniski/cit-book-seeker-ios-test/blob/develop/Screen%20Shot%202020-09-02%20at%2021.10.37.png)
-![prototype image](https://github.com/VictorKreniski/cit-book-seeker-ios-test/blob/develop/Screen%20Shot%202020-09-02%20at%2021.10.37.png)
-![prototype image](https://github.com/VictorKreniski/cit-book-seeker-ios-test/blob/develop/Screen%20Shot%202020-09-02%20at%2021.10.37.png)
 ![prototype image](https://github.com/VictorKreniski/cit-book-seeker-ios-test/blob/develop/Screen%20Shot%202020-09-02%20at%2021.10.37.png)
 
 # Difficulties 
